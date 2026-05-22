@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selection Helper 设置</title>
+    <link rel="stylesheet" href="./options.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Kimi API 设置</h1>
+      <p class="desc">
+        填写 Kimi 配置后，可在网页中选中文本使用解释、翻译、润色功能。
+      </p>
+      <p class="desc code">独立配置文件：<code>kimi.config.js</code></p>
+      <form id="config-form">
+        <label class="field">
+          <span>API Key</span>
+          <input id="apiKey" type="password" placeholder="sk-..." required />
+        </label>
+
+        <label class="field">
+          <span>Base URL</span>
+          <input id="baseUrl" type="url" value="https://api.moonshot.cn/v1" required />
+        </label>
+
+        <label class="field">
+          <span>Model</span>
+          <input id="model" type="text" value="moonshot-v1-8k" required />
+        </label>
+
+        <label class="field">
+          <span>Temperature (0~1)</span>
+          <input id="temperature" type="number" min="0" max="1" step="0.1" value="0.3" />
+        </label>
+
+        <div class="actions">
+          <button type="submit">保存设置</button>
+          <button id="restore-defaults" type="button" class="secondary">恢复配置文件默认值</button>
+        </div>
+        <p id="message" class="message"></p>
+      </form>
+    </main>
+    <script type="module" src="./options.js"></script>
+  </body>
+</html>
